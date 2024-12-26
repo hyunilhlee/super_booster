@@ -1,0 +1,18 @@
+[build]
+  command = "npm run build:production"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  CI = "false"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[context.production]
+  base = "/"
+
+[context.production.environment]
+  REACT_APP_API_URL = "https://pocask.netlify.app/api" 
